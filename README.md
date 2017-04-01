@@ -1,10 +1,10 @@
 ```
 === Index ===
-./Backdoor_Busting - Exposing workshop backdoors, then spamming their logs
-./v12       - Old stuff from 2012
-./v13       - The latest version of HeX's AntiCheat. All code. All modules.
-./v13_2016  - HAC 2016
-./v13_2016_FINAL - The very last version of HAC that HeX wrote before the UH shutdown, here for future reference.
+./Backdoor_Busting  - Exposing workshop backdoors, then spamming their logs.
+./v12               - Old stuff from 2012.
+./v13               - The GMod 13 version of HeX's AntiCheat. All code. All modules.
+./v13_2016          - HAC 2016.
+./v13_2016_FINAL    - The very last version of HAC that HeX wrote before the UH shutdown, here for future reference.
 
 Help credits:
 Willox    - Helping cheaters lose their marbles since '14
