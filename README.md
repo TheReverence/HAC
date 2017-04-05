@@ -522,37 +522,63 @@ Goodbye, and Garry, if you ever read this, listen to the community for a change 
 
 === HAC setup instructions ===
 
-Must have write access to C:/hac_totalbans.txt
-"HeX's AntiCheat" goes in addons/, the modules go in lua/bin.
-Open sv_HAC.lua and edit HAC.Conf to match your environment. Add your own Steam API key and set the file paths.
-Don't bother if the gamemode isn't Sandbox. You'll have to rewrite it all yourself if it isn't.
-Do not use ULX, or remove its stupid metatable on _G if you do.
-READ ALL THE CODE before you even attempt to start it up. Understand how it works.
-Remove the noob blocker
-Remove the contents of sh_W_HKS, BUT KEEP AT LEAST ONE LINE.
-Remove the contents of sh_W_GSafe.lua, this needs to be re-generated.
-Remove only the volatile tables in cl_W_HAC, these also need to be re-generated.
-Start the server, it will patch a few files and restart the map. You may need to exit the SRCDS process for it to work properly due to the last GMod update's latest fuckup breaking timers on map change.
-Fix any serverside errors.
-Changing the line count or even shuffling functions around in en_hac will result in a ban. Make sure to update sv_LPT/sv_HAC if you do this.
-Do hac_silent 1 and join, wait for the few thousand ban reports. This will take some time. You may have to edit out the removing of globals from en_hac if the game crashes on spawn/everything is nil.
+- Must have write access to C:/hac_totalbans.txt
+
+- "HeX's AntiCheat" goes in addons/, the modules go in lua/bin.
+
+- Open sv_HAC.lua and edit HAC.Conf to match your environment. Add your own Steam API key and set the file paths.
+
+- Don't bother if the gamemode isn't Sandbox. You'll have to rewrite it all yourself if it isn't.
+
+- Do not use ULX, or remove its stupid metatable on _G if you do.
+
+- READ ALL THE CODE before you even attempt to start it up. Understand how it works.
+
+- Remove the noob blocker.
+
+- Remove the contents of sh_W_HKS, BUT KEEP AT LEAST ONE LINE.
+
+- Remove the contents of sh_W_GSafe.lua, this needs to be re-generated.
+
+- Remove only the volatile tables in cl_W_HAC, these also need to be re-generated.
+
+- Start the server, it will patch a few files and restart the map. You may need to exit the SRCDS process for it to work properly due to the last GMod update's latest fuckup breaking timers on map change.
+
+- Fix any serverside errors.
+
+- Changing the line count or even shuffling functions around in en_hac will result in a ban. Make sure to update sv_LPT/sv_HAC if you do this.
+
+- Do hac_silent 1 and join, wait for the few thousand ban reports. This will take some time. You may have to edit out the removing of globals from en_hac if the game crashes on spawn/everything is nil.
+
 Whitelist all the reports:
-ff_* files go in sh_W_HKS
-_G* files go in sh_W_GSafe
-Most of the others go in cl_W_HAC, work it out.
-Restart the server and rejoin. This time edit the RCount/GCount/GCICount/GCBCount in sv_HAC.
-Mac users have different fonts. Make sure to test on Mac OS - OR IT WILL BAN ALL MAC USERS!
+
+- ff_* files go in sh_W_HKS
+
+- _G* files go in sh_W_GSafe
+
+- Most of the others go in cl_W_HAC, work it out.
+
+- Restart the server and rejoin. This time edit the RCount/GCount/GCICount/GCBCount in sv_HAC.
+
+- Mac users have different fonts. Make sure to test on Mac OS - OR IT WILL BAN ALL MAC USERS!
+
 === Critical notes & daily maintenance ===
 
 You'll have to keep up to date with the following:
 
-Review and empty the SCFolder every 45MB (~600 screenshots or so).
-A lot of players will create an H_* folder in /data. Add any ff_* files to a folder called "data/ff" and run "ff" on SRCDS, then add the data from "data/hks.txt" to sh_W_HKS, delete ff and hks.txt and restart the server.
-cc_*/cv_* files go in sv_CVList.
-If someone gets banned, their H_* folder will have an IS_BANNED.txt file. See their ban_* file for what caused it. Also add their ff_* files etc as usual.
-Add any sk_* file entries to sv_SkidList.
-If you notice new cheats by the kwc_* file, add their filename keywords to sv_ECheck to trigger a detection. Careful of "wooden_shack" etc having "hack" in the name. See sv_ECheck.
-You can contact me on Steam for any advice/questions about HAC or how any of it works if you want, but I *ABSOLUTELY WILL NOT* help kids and/or people who can't code set it up.
+- Review and empty the SCFolder every 45MB (~600 screenshots or so).
+
+- A lot of players will create an H_* folder in /data. Add any ff_* files to a folder called "data/ff" and run "ff" on SRCDS, then add the data from "data/hks.txt" to sh_W_HKS, delete ff and hks.txt and restart the server.
+
+- cc_*/cv_* files go in sv_CVList.
+
+- If someone gets banned, their H_* folder will have an IS_BANNED.txt file. See their ban_* file for what caused it. Also add their ff_* files etc as usual.
+
+- Add any sk_* file entries to sv_SkidList.
+
+- If you notice new cheats by the kwc_* file, add their filename keywords to sv_ECheck to trigger a detection. Careful of "wooden_shack" etc having "hack" in the name. See sv_ECheck.
+
+- You can contact me on Steam for any advice/questions about HAC or how any of it works if you want, but I *ABSOLUTELY WILL NOT* help kids and/or people who can't code set it up.
 
 -=[UH]=- General HeX.
 
